@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/rec">
+        <file>img/icon_addusuer.png</file>
+        <file>img/icon_delete-user.png</file>
+        <file>img/icon_save.png</file>
+        <file>img/icon_save_us.png</file>
+        <file>img/log.png</file>
+        <file>img/logo.png</file>
+    </qresource>
+    <qresource prefix="/ra"/>
+</RCC>

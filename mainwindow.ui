@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>678</width>
+    <height>314</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>678</width>
+      <height>314</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(170, 255, 255)</string>
+    </property>
+    <property name="currentIndex">
+     <number>1</number>
+    </property>
+    <widget class="QWidget" name="page">
+     <widget class="QLabel" name="label_pic">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>70</y>
+        <width>131</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>70</y>
+        <width>233</width>
+        <height>112</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <widget class="QLabel" name="label_ID">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);</string>
+             </property>
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; font-style:italic;&quot;&gt;Identifiant&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_ID">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QLabel" name="label_mdp">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);</string>
+             </property>
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; font-style:italic;&quot;&gt;Mot de passe&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_mdp">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);</string>
+             </property>
+             <property name="echoMode">
+              <enum>QLineEdit::Password</enum>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_seconnecter">
+         <property name="styleSheet">
+          <string notr="true">background-color:rgb(170, 170, 255)</string>
+         </property>
+         <property name="text">
+          <string>Se Connecter</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_4">
+     <widget class="QLabel" name="label_pic_3">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>70</y>
+        <width>131</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>206</x>
+        <y>20</y>
+        <width>251</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600; color:#55007f;&quot;&gt;La Page d'Accueil&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_deconnecter">
+      <property name="geometry">
+       <rect>
+        <x>544</x>
+        <y>20</y>
+        <width>91</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#pushButton_deconnecter {
+    background-color:rgb(170, 170, 255);
+border-color: rgb(255, 255, 255);
+}
+
+
+#pushButton_deconnecter:pressed {
+    background-color: rgb(255, 170, 255);
+}
+</string>
+      </property>
+      <property name="text">
+       <string>se Déconnecter</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>227</x>
+        <y>80</y>
+        <width>181</width>
+        <height>141</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_6">
+       <item>
+        <widget class="QPushButton" name="pushButton_restaurants">
+         <property name="styleSheet">
+          <string notr="true">#pushButton_restaurants {
+    background-color:rgb(170, 170, 255);
+border-color: rgb(255, 255, 255);
+}
+#pushButton_restaurants:hover {
+    background-color: rgb(255, 170, 255);
+}
+
+#pushButton_restaurants:pressed {
+    background-color: rgb(255, 170, 255);  
+}</string>
+         </property>
+         <property name="text">
+          <string>Gestion des restaurants </string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_employes">
+         <property name="styleSheet">
+          <string notr="true">#pushButton_employes {
+    background-color:rgb(170, 170, 255);
+border-color: rgb(255, 255, 255);
+}
+#pushButton_employes:hover {
+    background-color: rgb(255, 170, 255);
+}
+
+#pushButton_employes:pressed{
+    background-color:rgb(255, 170, 255);
+border-color: rgb(255, 255, 255);}</string>
+         </property>
+         <property name="text">
+          <string>Gestion des livreurs</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_zone">
+         <property name="styleSheet">
+          <string notr="true">#pushButton_zone {
+    background-color:rgb(170, 170, 255);
+border-color: rgb(255, 255, 255);
+}
+#pushButton_zone:hover {
+    background-color: rgb(255, 170, 255);
+}
+
+#pushButton_zone:pressed {
+          background-color: rgb(255, 170, 255);
+}
+
+</string>
+         </property>
+         <property name="text">
+          <string>Gestion des zones</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_reclamation">
+         <property name="styleSheet">
+          <string notr="true">#pushButton_reclamation{
+    background-color:rgb(170, 170, 255);
+border-color: rgb(255, 255, 255);
+}
+#pushButton_reclamation:hover {
+    background-color: rgb(255, 170, 255);
+}
+
+#pushButton_reclamation:pressed {
+    background-color: rgb(255, 170, 255);
+}
+</string>
+         </property>
+         <property name="text">
+          <string>Gestion des reclamation</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_outils">
+         <property name="styleSheet">
+          <string notr="true">#pushButton_outils {
+    background-color:rgb(170, 170, 255);
+border-color: rgb(255, 255, 255);
+}
+#pushButton_outils:hover {
+    background-color: rgb(255, 170, 255);
+}
+
+#pushButton_outils:pressed {
+    background-color: rgb(255, 170, 255);
+}
+</string>
+         </property>
+         <property name="text">
+          <string>Gestion des catégorie</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>80</y>
+        <width>174</width>
+        <height>141</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_7">
+       <item>
+        <widget class="QPushButton" name="pushButton_offres">
+         <property name="styleSheet">
+          <string notr="true">#pushButton_offres {
+    background-color:rgb(170, 170, 255);
+border-color: rgb(255, 255, 255);
+}
+#pushButton_offres:hover {
+    background-color: rgb(255, 170, 255);
+}
+
+#pushButton_offres:pressed {
+    background-color: rgb(255, 170, 255);
+}</string>
+         </property>
+         <property name="text">
+          <string>Gestion des promotions</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_mdt">
+         <property name="styleSheet">
+          <string notr="true">#pushButton_mdt {
+    background-color:rgb(170, 170, 255);
+border-color: rgb(255, 255, 255);
+}
+#pushButton_mdt:hover {
+    background-color: rgb(255, 170, 255);
+}
+
+#pushButton_mdt:pressed {
+    background-color: rgb(255, 170, 255);
+}</string>
+         </property>
+         <property name="text">
+          <string>Gestion des scooters</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_commandes">
+         <property name="styleSheet">
+          <string notr="true">#pushButton_commandes {
+    background-color:rgb(170, 170, 255);
+border-color: rgb(255, 255, 255);
+}
+#pushButton_commandes:hover {
+    background-color: rgb(255, 170, 255);
+}
+
+#pushButton_commandes:pressed {
+    background-color: rgb(255, 170, 255);
+}</string>
+         </property>
+         <property name="text">
+          <string>Gestion des commandes</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_clients">
+         <property name="styleSheet">
+          <string notr="true">#pushButton_clients {
+    background-color:rgb(170, 170, 255);
+border-color: rgb(255, 255, 255);
+}
+#pushButton_clients:hover {
+    background-color: rgb(255, 170, 255);
+}
+
+#pushButton_clients:pressed {
+    background-color: rgb(255, 170, 255);
+}</string>
+         </property>
+         <property name="text">
+          <string>Gestion des clients</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_factures">
+         <property name="styleSheet">
+          <string notr="true">#pushButton_factures {
+    background-color:rgb(170, 170, 255);
+border-color: rgb(255, 255, 255);
+}
+#pushButton_factures:hover {
+    background-color: rgb(255, 170, 255);
+}
+
+#pushButton_factures:pressed {
+    background-color: rgb(255, 170, 255);    
+}</string>
+         </property>
+         <property name="text">
+          <string>Gestion des factures</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QPushButton" name="pushButton_music">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>230</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#pushButton_music {
+    background-color:rgb(170, 170, 255);
+border-color: rgb(255, 255, 255);
+}
+#pushButton_music:hover {
+    background-color: rgb(255, 170, 255);
+}
+
+#pushButton_music:pressed {
+    background-color: rgb(255, 170, 255);
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Musique</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>678</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
