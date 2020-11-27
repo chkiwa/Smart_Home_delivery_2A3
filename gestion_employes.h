@@ -56,7 +56,7 @@ private:
     Ui::Gestion_employes *ui;
     attemploye temp;
 
-    QVector<double> qv_x, qv_y;
+
 
 signals:
     void homeclicked();

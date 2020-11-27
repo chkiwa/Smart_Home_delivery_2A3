@@ -30,7 +30,7 @@ bool attemploye::ajouteremploye()
 {  QSqlQuery query;
    QString res1 = QString::number(numero_tele);
    QString res2 = QString::number(heure_m);
-   query.prepare("INSERT INTO livreur (id, nom, prenom, numero_tele, mdp, presence, idsco, heure_m)VALUES(:id,:nom ,:prenom, :numero_tele, :mdp, :presence, :idsco, :heure_m)");
+   query.prepare("INSERT INTO LIVREUR1 (id, nom, prenom, numero_tele, mdp, presence, idsco, heure_m)VALUES(:id,:nom ,:prenom, :numero_tele, :mdp, :presence, :idsco, :heure_m)");
    query.bindValue(":id",id);
    query.bindValue(":nom",nom);
    query.bindValue(":prenom",prenom);
@@ -48,7 +48,7 @@ bool attemploye::modifieremploye()
     QSqlQuery query;
        QString res1 = QString::number(numero_tele);
        QString res2 = QString::number(heure_m);
-    query.prepare("update livreur set id='"+id+"' ,nom='"+nom+"' ,prenom='"+prenom+"' ,numero_tele='"+res1+"', mdp='"+mdp+"', presence='"+presence+"', idsco='"+idsco+"', heure_m='"+res2+"' where id='"+id+"' " );
+    query.prepare("update livreur1 set id='"+id+"' ,nom='"+nom+"' ,prenom='"+prenom+"' ,numero_tele='"+res1+"', mdp='"+mdp+"', presence='"+presence+"', idsco='"+idsco+"', heure_m='"+res2+"' where id='"+id+"' " );
     query.bindValue(":id",id);
     query.bindValue(":nom",nom);
     query.bindValue(":prenom",prenom);
@@ -64,14 +64,14 @@ bool attemploye::modifieremploye()
 QSqlQuery attemploye::load_data()
 {
     QSqlQuery query;
-    query.prepare("select id from livreur");
+    query.prepare("select id from livreur1");
     return query;
 }
 
 QSqlQueryModel* attemploye::afficher(QString itemtext)
 {
     QSqlQueryModel* model=new QSqlQueryModel();
-    model->setQuery("select * from livreur where id='"+itemtext+"' ");
+    model->setQuery("select * from livreur1 where id='"+itemtext+"' ");
     model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID"));
        model->setHeaderData(1,Qt::Horizontal,QObject::tr("NOM"));
        model->setHeaderData(2,Qt::Horizontal,QObject::tr("Prenom"));
@@ -85,7 +85,7 @@ QSqlQueryModel* attemploye::afficher(QString itemtext)
 bool attemploye::supprimer(QString itemtext)
 {
        QSqlQuery query;
-       query.prepare("Delete from livreur where id='"+itemtext+"'");
+       query.prepare("Delete from livreur1 where id='"+itemtext+"'");
         return query.exec();
 
 }
@@ -102,7 +102,7 @@ bool attemploye::supprimer(QString itemtext)
 QSqlQuery attemploye::recuperer(QString itemtext)
 {
     QSqlQuery query;
-        query.prepare("select * from livreur where id='"+itemtext+"'");
+        query.prepare("select * from livreur1 where id='"+itemtext+"'");
         query.exec();
         return query;
 }
@@ -111,7 +111,7 @@ QSqlQuery attemploye::recuperer(QString itemtext)
 QSqlQueryModel* attemploye::afficherendement()
 {
     QSqlQueryModel* model=new QSqlQueryModel();
-    model->setQuery("select * from livreur ");
+    model->setQuery("select * from livreur1 ");
     model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID"));
     model->setHeaderData(5,Qt::Horizontal,QObject::tr("Présence"));
     model->setHeaderData(6,Qt::Horizontal,QObject::tr("Heure(m)"));
@@ -121,7 +121,7 @@ QSqlQueryModel* attemploye::afficherendement()
 QSqlQuery attemploye::stat()
 {
     QSqlQuery query;
-        query.prepare("select *from livreur ");
+        query.prepare("select *from livreur1 ");
         query.exec();
         return query;
 }

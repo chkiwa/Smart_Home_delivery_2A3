@@ -147,7 +147,7 @@ void gestion_moyen_dt::supprimerItem()
     QModelIndex index = ui->listView->currentIndex();
     QString itemtext = index.data(Qt::DisplayRole).toString();
 
-    reply = QMessageBox::question(this,"We Deliver","Voulez vous vraiment supprimer ce Livreur ?",QMessageBox::Cancel|QMessageBox::Ok);
+    reply = QMessageBox::question(this,"We Deliver","Voulez vous vraiment supprimer ce Scooter ?",QMessageBox::Cancel|QMessageBox::Ok);
         if(reply == QMessageBox::Ok)
 
      {
@@ -301,10 +301,13 @@ void gestion_moyen_dt::on_pushButton_print_clicked()
 
     out <<  "<html>\n"
         "<head>\n"
+
         "<meta Content=\"Text/html; charset=Windows-1251\">\n"
+
+        <<  QString("<title>%20</title>\n").arg("les depenses")
         <<  "</head>\n"
         "<body bgcolor=#ffffff link=#5000A0>\n"
-        "<table border=1 cellspacing=0 cellpadding=2>\n";
+        "<table border=1 cellspacing=20 cellpadding=20>\n";
     out << "<thead><tr bgcolor=#f0f0f0>";
     for (int column = 0; column < columnCount; column++)
         if (! ui->tableView_2->isColumnHidden(column))

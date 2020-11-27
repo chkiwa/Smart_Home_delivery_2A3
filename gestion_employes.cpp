@@ -353,7 +353,7 @@ void Gestion_employes::on_pushButton_trier_clicked()
 
 QSqlQueryModel * myModel=new QSqlQueryModel(ui->tableView_2);
    QSqlQuery query;
-   if(query.exec("select * from livreur"))
+   if(query.exec("select * from livreur1"))
    {myModel->setQuery(query);
       QSortFilterProxyModel *proxyModel = new QSortFilterProxyModel(myModel);
       proxyModel->setSourceModel(myModel);

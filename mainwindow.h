@@ -4,7 +4,7 @@
 #include <gestion_employes.h>
 #include <gestion_moyen_dt.h>
 #include "music.h"
-
+#include <QString>
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE

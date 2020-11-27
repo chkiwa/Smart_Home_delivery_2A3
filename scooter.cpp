@@ -20,7 +20,7 @@ bool scooter::ajoutscooter()
 {  QSqlQuery query;
 
     QString res1 = QString::number(depense);
-    query.prepare("INSERT INTO scooter (id, etat, dispo,depense)VALUES(:id,:etat ,:dispo, :depense)");
+    query.prepare("INSERT INTO scooter2 (id, etat, dispo,depense)VALUES(:id,:etat ,:dispo, :depense)");
     query.bindValue(":id",id);
     query.bindValue(":etat",etat);
     query.bindValue(":dispo",dispo);
@@ -31,14 +31,14 @@ bool scooter::ajoutscooter()
 QSqlQuery scooter::load_data()
 {
     QSqlQuery query;
-    query.prepare("select id from scooter");
+    query.prepare("select id from scooter2");
     return query;
 }
 
 QSqlQueryModel* scooter::afficher(QString itemtext)
 {
     QSqlQueryModel* model=new QSqlQueryModel();
-    model->setQuery("select * from scooter where id='"+itemtext+"' ");
+    model->setQuery("select * from scooter2 where id='"+itemtext+"' ");
     model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID"));
        model->setHeaderData(1,Qt::Horizontal,QObject::tr("Etat"));
        model->setHeaderData(2,Qt::Horizontal,QObject::tr("Disponibilité"));
@@ -50,7 +50,7 @@ QSqlQueryModel* scooter::afficher(QString itemtext)
 bool scooter::supprimer(QString itemtext)
 {
        QSqlQuery query;
-       query.prepare("Delete from scooter where id='"+itemtext+"'");
+       query.prepare("Delete from scooter2 where id='"+itemtext+"'");
         return query.exec();
 
 }
@@ -67,7 +67,7 @@ QSqlQueryModel* scooter::afficherliste()
 QSqlQueryModel* scooter::afficherdepense()
 {
     QSqlQueryModel* model=new QSqlQueryModel();
-    model->setQuery("select * from scooter ");
+    model->setQuery("select * from scooter2 ");
     model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID"));
     model->setHeaderData(1,Qt::Horizontal,QObject::tr("Etat"));
     model->setHeaderData(2,Qt::Horizontal,QObject::tr("Disponibilité"));
@@ -80,7 +80,7 @@ bool scooter::modifierscooter()
         QSqlQuery query;
 
         QString res1 = QString::number(depense);
-        query.prepare("update scooter set id='"+id+"', etat='"+etat+"', dispo='"+dispo+"',depense='"+res1+"' where id='"+id+"' " );
+        query.prepare("update scooter2 set id='"+id+"', etat='"+etat+"', dispo='"+dispo+"',depense='"+res1+"' where id='"+id+"' " );
         query.bindValue(":id",id);
         query.bindValue(":etat",etat);
         query.bindValue(":dispo",dispo);
@@ -91,7 +91,7 @@ bool scooter::modifierscooter()
 QSqlQuery scooter::recuperer(QString itemtext)
 {
     QSqlQuery query;
-        query.prepare("select * from scooter where id='"+itemtext+"'");
+        query.prepare("select * from scooter2 where id='"+itemtext+"'");
         query.exec();
         return query;
 }
