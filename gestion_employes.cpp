@@ -19,7 +19,7 @@ Gestion_employes::Gestion_employes(QWidget *parent) :
     ui->setupUi(this);
 
     animation = new QPropertyAnimation (ui->label_gestion_livreur,"geometry");
-    animation->setDuration(10000);
+    animation->setDuration(20000);
     animation->setStartValue(ui->label_gestion_livreur->geometry());
     animation->setEndValue(QRect(160,10,171,30));
     animation->start();
@@ -394,4 +394,21 @@ void Gestion_employes::on_pushButton_diagramme_clicked()
 void Gestion_employes::on_pushButton_precedent_clicked()
 {
  ui->stackedWidget->setCurrentIndex(4);
+}
+
+void Gestion_employes::on_pushButton_chercher_clicked()
+{
+    QString id=ui->lineEdit_recherche->text();
+       if(temp.recherche(id))
+       {
+           ui->tableView->setModel(temp.afficher(id));
+           ui->stackedWidget->setCurrentIndex(3);
+       }
+       else
+       {
+           QMessageBox::critical(nullptr, QObject::tr("Error"),
+                                 QObject::tr("livreur n'est pas trouvé.\n"
+                                             "Click Cancel to exit."), QMessageBox::Cancel);
+       }
+
 }

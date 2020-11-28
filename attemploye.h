@@ -33,7 +33,7 @@ public:
     bool ajouteremploye();
     bool modifieremploye( );
     QSqlQueryModel* afficher(QString );
-   // QSqlQueryModel* recherche(QString );
+    bool recherche(QString );
     QSqlQuery load_data();
     QSqlQueryModel* afficherendement();
     QSqlQueryModel* afficherliste();

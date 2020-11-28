@@ -51,6 +51,8 @@ private slots:
 
     void on_pushButton_precedent_clicked();
 
+    void on_pushButton_chercher_clicked();
+
 private:
     QPropertyAnimation *animation;
     Ui::Gestion_employes *ui;

@@ -16,7 +16,7 @@ gestion_moyen_dt::gestion_moyen_dt(QWidget *parent) :
     ui->setupUi(this);
 
     animation = new QPropertyAnimation (ui->label_gestion_scooter,"geometry");
-    animation->setDuration(8000);
+    animation->setDuration(20000);
     animation->setStartValue(ui->label_gestion_scooter->geometry());
     animation->setEndValue(QRect(160,10,171,30));
     animation->start();
@@ -116,8 +116,16 @@ void gestion_moyen_dt::on_pushButton_ajoutermdt2_clicked()
             else {
             ui->lineEdit_etat->setStyleSheet("border: 1px solid blue");
             }
+       if(ui->lineEdit_depense->text().isEmpty())
+            {ui->lineEdit_depense->setStyleSheet("border: 1px solid red");
+            test =true;
+            }
+            else {
+            ui->lineEdit_depense->setStyleSheet("border: 1px solid blue");
+            }
+
        test=false;
-       if((ui->lineEdit_etat->text().isEmpty())||(ui->lineEdit_dispo->text().isEmpty())||(ui->lineEdit_idscooter->text().isEmpty())||ui->lineEdit_depense->text().isEmpty())
+       if((ui->lineEdit_etat->text().isEmpty())||(ui->lineEdit_dispo->text().isEmpty())||(ui->lineEdit_idscooter->text().isEmpty())||(ui->lineEdit_depense->text().isEmpty()))
                {
            test=true;
            QMessageBox::warning(this,"we deliver","Veuillez remplir les champs obligatoires marqués en rouge");
@@ -296,6 +304,8 @@ void gestion_moyen_dt::on_pushButton_print_clicked()
     QString strStream;
     QTextStream out(&strStream);
 
+
+
     const int rowCount = ui->tableView_2->model()->rowCount();
     const int columnCount = ui->tableView_2->model()->columnCount();
 
@@ -303,11 +313,10 @@ void gestion_moyen_dt::on_pushButton_print_clicked()
         "<head>\n"
 
         "<meta Content=\"Text/html; charset=Windows-1251\">\n"
-
-        <<  QString("<title>%20</title>\n").arg("les depenses")
+        <<  QString("<title>%60 les depenses</title>\n").arg(ui->label_21->text())
         <<  "</head>\n"
         "<body bgcolor=#ffffff link=#5000A0>\n"
-        "<table border=1 cellspacing=20 cellpadding=20>\n";
+        "<table border=1 cellspacing=0 cellpadding=2>\n";
     out << "<thead><tr bgcolor=#f0f0f0>";
     for (int column = 0; column < columnCount; column++)
         if (! ui->tableView_2->isColumnHidden(column))
@@ -337,5 +346,22 @@ void gestion_moyen_dt::on_pushButton_print_clicked()
     if (dialog->exec() == QDialog::Accepted) {
         document->print(&printer);
     }
+
     delete document;
+}
+
+void gestion_moyen_dt::on_pushButton_chercher_clicked()
+{
+    QString id=ui->lineEdit_chercher->text();
+       if(sco.recherche(id))
+       {
+           ui->tableView->setModel(sco.afficher(id));
+           ui->stackedWidget->setCurrentIndex(3);
+       }
+       else
+       {
+           QMessageBox::critical(nullptr, QObject::tr("Error"),
+                                 QObject::tr("scooter n'est pas trouvé.\n"
+                                             "Click Cancel to exit."), QMessageBox::Cancel);
+       }
 }

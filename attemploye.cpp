@@ -126,20 +126,15 @@ QSqlQuery attemploye::stat()
         return query;
 }
 
- /*QSqlQueryModel* attemploye::recherche(QString id)
+ bool attemploye::recherche(QString id)
  {  QSqlQuery query;
-     QSqlQueryModel* model=new QSqlQueryModel();
-     model->setQuery("select * from livreur where id like :id order by lineEdit_recherche ");
-     query.bindValue(":id",id);
+     query.prepare("select * from livreur1 where id='"+id+"'");
      query.exec();
-     model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID"));
-        model->setHeaderData(1,Qt::Horizontal,QObject::tr("NOM"));
-        model->setHeaderData(2,Qt::Horizontal,QObject::tr("Prenom"));
-        model->setHeaderData(3,Qt::Horizontal,QObject::tr("Numero téléphone"));
-        model->setHeaderData(4,Qt::Horizontal,QObject::tr("Mot de passe"));
-        model->setHeaderData(5,Qt::Horizontal,QObject::tr("Présence"));
-        model->setHeaderData(7,Qt::Horizontal,QObject::tr("IDscooter"));
-        model->setHeaderData(6,Qt::Horizontal,QObject::tr("Heure(m)"));
-        return model;
+     if(query.next())
+        {
+            return true;
+        }
+
+        return false;
  }
-*/
+

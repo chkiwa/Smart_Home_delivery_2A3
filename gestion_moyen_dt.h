@@ -5,6 +5,7 @@
 #include <QTimer>
 #include "scooter.h"
 #include <QPropertyAnimation>
+#include <QPlainTextEdit>
 namespace Ui {
 class gestion_moyen_dt;
 }
@@ -42,6 +43,8 @@ private slots:
 
 
     void on_pushButton_print_clicked();
+
+    void on_pushButton_chercher_clicked();
 
 public slots:
      void fonctionmontre();

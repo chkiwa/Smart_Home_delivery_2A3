@@ -95,3 +95,16 @@ QSqlQuery scooter::recuperer(QString itemtext)
         query.exec();
         return query;
 }
+
+bool scooter::recherche(QString id)
+{
+    QSqlQuery query;
+         query.prepare("select * from scooter2 where id='"+id+"'");
+         query.exec();
+         if(query.next())
+            {
+                return true;
+            }
+
+            return false;
+}
