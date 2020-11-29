@@ -24,7 +24,7 @@ public:
     QSqlQueryModel* afficherliste();
     bool supprimer(QString);
     QSqlQuery recuperer(QString);
-    bool recherche(QString id);
+    QSqlQueryModel* recherche(QString id);
 };
 
 #endif // SCOOTER_H

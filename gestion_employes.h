@@ -53,6 +53,8 @@ private slots:
 
     void on_pushButton_chercher_clicked();
 
+    void on_lineEdit_recherche_textChanged(const QString &arg1);
+
 private:
     QPropertyAnimation *animation;
     Ui::Gestion_employes *ui;

@@ -365,3 +365,13 @@ void gestion_moyen_dt::on_pushButton_chercher_clicked()
                                              "Click Cancel to exit."), QMessageBox::Cancel);
        }
 }
+
+void gestion_moyen_dt::on_lineEdit_chercher_textChanged(const QString &arg1)
+{
+    QString id =arg1;
+       ui->listView->setModel(sco.recherche(id));
+       if(ui->lineEdit_chercher->text()=="")
+       {
+        ui->listView->setModel(sco.afficherliste());
+       }
+}

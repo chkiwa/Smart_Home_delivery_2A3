@@ -126,15 +126,13 @@ QSqlQuery attemploye::stat()
         return query;
 }
 
- bool attemploye::recherche(QString id)
- {  QSqlQuery query;
-     query.prepare("select * from livreur1 where id='"+id+"'");
+QSqlQueryModel* attemploye::recherche(QString id)
+ {
+     QSqlQueryModel *model=new QSqlQueryModel();
+     QSqlQuery query;
+     query.prepare("select id from livreur1 where id='"+id+"'");
      query.exec();
-     if(query.next())
-        {
-            return true;
-        }
-
-        return false;
+     model->setQuery(query);
+     return model;
  }
 

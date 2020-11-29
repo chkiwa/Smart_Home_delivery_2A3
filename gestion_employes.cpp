@@ -412,3 +412,13 @@ void Gestion_employes::on_pushButton_chercher_clicked()
        }
 
 }
+
+void Gestion_employes::on_lineEdit_recherche_textChanged(const QString &arg1)
+{
+    QString id =arg1;
+       ui->listView->setModel(temp.recherche(id));
+       if(ui->lineEdit_recherche->text()=="")
+       {
+        ui->listView->setModel(temp.afficherliste());
+       }
+}

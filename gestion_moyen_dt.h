@@ -46,6 +46,8 @@ private slots:
 
     void on_pushButton_chercher_clicked();
 
+    void on_lineEdit_chercher_textChanged(const QString &arg1);
+
 public slots:
      void fonctionmontre();
 
